@@ -1,8 +1,11 @@
 # GTFS to MySQL
+Load GTFS into a MySQL database
+
+## Overview
 
 This sql file will read an unzipped [GTFS](https://developers.google.com/transit/gtfs/) (General Transit Feed Specification) file into a MySQL database. This is useful for making GTFS data queryable.
 
-## Running locally
+## Installation
 
 * Start mysql locally
     mysqld --local-infile=1
@@ -15,3 +18,6 @@ This sql file will read an unzipped [GTFS](https://developers.google.com/transit
 
 * Import the GTFS files to your local database
     cat gtfs_to_mysql.sql | mysql -u root --local-infile
+
+## License
+This project is licensed under GNU General Public License v3.0.
