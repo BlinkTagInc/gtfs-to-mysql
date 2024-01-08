@@ -29,7 +29,7 @@ CREATE TABLE `calendar` (
 DROP TABLE IF EXISTS calendar_dates;
 
 CREATE TABLE `calendar_dates` (
-  service_id INT(11),
+  service_id VARCHAR(50),
   `date` VARCHAR(8),
   exception_type INT(2),
   KEY `service_id` (service_id),
@@ -39,7 +39,7 @@ CREATE TABLE `calendar_dates` (
 DROP TABLE IF EXISTS fare_attributes;
 
 CREATE TABLE `fare_attributes` (
-  fare_id INT(11),
+  fare_id VARCHAR(50),
   price DECIMAL(9,6),
   currency_type VARCHAR(8),
   payment_method INT(11),
@@ -50,8 +50,8 @@ CREATE TABLE `fare_attributes` (
 DROP TABLE IF EXISTS fare_rules;
 
 CREATE TABLE `fare_rules` (
-  fare_id INT(11),
-  route_id INT(11),
+  fare_id VARCHAR(50),
+  route_id VARCHAR(50),
   KEY `fare_id` (fare_id),
   KEY `route_id` (route_id)
 );
@@ -80,10 +80,10 @@ CREATE TABLE `shapes` (
 DROP TABLE IF EXISTS stop_times;
 
 CREATE TABLE `stop_times` (
-  trip_id INT(11),
+  trip_id VARCHAR(50),
   arrival_time VARCHAR(8),
   departure_time VARCHAR(8),
-  stop_id INT(11),
+  stop_id VARCHAR(50),
   stop_sequence INT(11),
   KEY `trip_id` (trip_id),
   KEY `stop_id` (stop_id),
@@ -93,7 +93,7 @@ CREATE TABLE `stop_times` (
 DROP TABLE IF EXISTS stops;
 
 CREATE TABLE `stops` (
-  stop_id INT(11) PRIMARY KEY,
+  stop_id VARCHAR(50) PRIMARY KEY,
   stop_name VARCHAR(255),
   stop_lat DECIMAL(9,6),
   stop_lon DECIMAL(9,6),
@@ -104,9 +104,9 @@ CREATE TABLE `stops` (
 DROP TABLE IF EXISTS trips;
 
 CREATE TABLE `trips` (
-  route_id INT(11),
-  service_id INT(11),
-  trip_id INT(11) PRIMARY KEY,
+  route_id VARCHAR(50),
+  service_id VARCHAR(50),
+  trip_id VARCHAR(50) PRIMARY KEY,
   trip_headsign VARCHAR(255),
   direction_id TINYINT(1),
   shape_id VARCHAR(50),
