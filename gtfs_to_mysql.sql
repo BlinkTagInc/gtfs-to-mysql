@@ -3,7 +3,7 @@ USE gtfs_for_import;
 DROP TABLE IF EXISTS agency;
 
 CREATE TABLE `agency` (
-  agency_id int(11) PRIMARY KEY,
+  agency_id VARCHAR(50) PRIMARY KEY,
   agency_name VARCHAR(255),
   agency_url VARCHAR(255),
   agency_timezone VARCHAR(50),
@@ -13,7 +13,7 @@ CREATE TABLE `agency` (
 DROP TABLE IF EXISTS calendar;
 
 CREATE TABLE `calendar` (
-  service_id INT(11),
+  service_id VARCHAR(50),
   monday TINYINT(1),
   tuesday TINYINT(1),
   wednesday TINYINT(1),
